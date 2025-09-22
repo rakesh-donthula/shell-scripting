@@ -5,4 +5,6 @@ echo "User is : $USER"
 echo "PID is : $$"
 echo "User Home directory: $HOME"
 echo "Current directory: $PWD"
-echo "Satrt date in seconds: $date"
+
+sleep 40
+echo "last command PID is : $!"
