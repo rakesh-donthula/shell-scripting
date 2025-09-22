@@ -6,5 +6,5 @@ echo "PID is : $$"
 echo "User Home directory: $HOME"
 echo "Current directory: $PWD"
 
-sleep 40
+sleep 5
 echo "last command PID is : $!"
