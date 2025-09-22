@@ -1,7 +1,6 @@
 #!/bin/bash
 
-
-#Passing the Arguments
+# No space before or after equal
 PERSON1="$1"
 PERSON2="$2"
 
