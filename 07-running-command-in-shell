@@ -1,10 +1,12 @@
 #!/bin/bash
 
-START_TIME=$(date +%s)
 
+START_TIME=$(date +%s)
+echo "print $START_TIME Seconds"
 sleep 5
 
 END_TIME=$(date +%s)
+echo "print $END_TIME Seconds"
 
 Total_Time=$(($END_TIME-$START_TIME))
 
