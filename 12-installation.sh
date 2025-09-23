@@ -3,10 +3,10 @@
 USER=$(id -u)
 
 if [ $USER -eq 0 ]; then
-    echo "Installing the package"
-else
     echo "please install the package with root"
     exit1
+else
+    echo "Installing the package"
 fi
 
 dnf install mysql -y
