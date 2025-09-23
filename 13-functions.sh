@@ -18,6 +18,8 @@ VALIDATE(){
 
 dnf install mysql -y
 VALIDATE $? "MYSQL"
+else "MYSQL already exists"
 
 dnf install nginx -y
 VALIDATE $? "nginx"
+else "NGINX already exists"
