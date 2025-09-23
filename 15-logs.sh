@@ -12,7 +12,7 @@ SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 LOGS_FILE="$LOGS_FLODER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FLODER
-echo "Script executed at: $(date)" | tee -a $LOG_FILE
+echo "Script executed at: $(date)" 
 
 
 if [ $USER -ne 0 ]; then
@@ -29,17 +29,17 @@ VALIDATE(){
     fi
 }
 
-dnf list installed mysql &>>$LOG_FILE
+dnf list installed mysql &>>$LOGS_FILE
 if [ $? -ne 0 ]; then
-    dnf install mysql -y &>>$LOG_FILE
+    dnf install mysql -y &>>$LOGS_FILE
     VALIDATE $? "MYSQL"
 else 
     echo -e "MYSQL $Y Already exists $N"
 fi
 
-dnf list installed nginx &>>$LOG_FILE
+dnf list installed nginx &>>$LOGS_FILE
 if [ $? -ne 0 ]; then
-    dnf install nginx -y &>>$LOG_FILE
+    dnf install nginx -y &>>$LOGS_FILE
     VALIDATE $? "nginx"
 else
     echo -e "NGINX $Y Already exists $N"
