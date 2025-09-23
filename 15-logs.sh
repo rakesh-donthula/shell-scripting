@@ -9,7 +9,7 @@ N="\e[0m"
 
 LOGS_FLODER="/var/log/shell-scripting"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
-LOGS_FILE="$LOG_FLODER/$SCRIPT_NAME.log"
+LOGS_FILE="$LOGS_FLODER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FLODER
 echo "Script executed at: $(date)" | tee -a $LOG_FILE
