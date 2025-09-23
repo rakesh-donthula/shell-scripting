@@ -8,8 +8,8 @@ Y="\e[33m"
 N="\e[0m"
 
 LOGS_FLODER="/var/log/shell-scripting"
-SCRIPT_NAME=$( echo $0 | cut -d "." -f1)
-LOGS_FILE="$LOG_FLODER-$SCRIPT_NAME.log"
+SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
+LOGS_FILE="$LOG_FLODER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FLODER
 echo "Script executed at: $(date)" | tee -a $LOG_FILE
@@ -29,17 +29,17 @@ VALIDATE(){
     fi
 }
 
-dnf list installed mysql
+dnf list installed mysql &>>$LOG_FILE
 if [ $? -ne 0 ]; then
-    dnf install mysql -y
+    dnf install mysql -y &>>$LOG_FILE
     VALIDATE $? "MYSQL"
 else 
     echo -e "MYSQL $Y Already exists $N"
 fi
 
-dnf list installed nginx
+dnf list installed nginx &>>$LOG_FILE
 if [ $? -ne 0 ]; then
-    dnf install nginx -y
+    dnf install nginx -y &>>$LOG_FILE
     VALIDATE $? "nginx"
 else
     echo -e "NGINX $Y Already exists $N"
